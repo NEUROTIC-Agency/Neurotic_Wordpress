@@ -1,0 +1,8 @@
+# Ignore general files and directories
+plugins
+uploads
+themes/.DS_Store
+themes/twentytwentyone
+themes/twentytwentytwo
+themes/twentytwentythree
+.DS_Store

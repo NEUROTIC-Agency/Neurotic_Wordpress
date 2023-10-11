@@ -1,0 +1,81 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+body {
+	@apply bg-background text-foreground font-sans;
+}
+
+#menu-footer {
+	display: grid;
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		row-gap: 3.5rem; /* 56px */
+	}
+	row-gap: 2rem; /* 56px */
+}
+
+#menu-footer > li > a {
+	display: block;
+	color: #9ca3af;
+	margin-bottom: 8px;
+	@media (min-width: 768px) {
+		margin-bottom: 16px;
+	}
+}
+
+.sub-menu > li:not(:last-child) {
+	margin-bottom: 8px;
+	@media (min-width: 768px) {
+		margin-bottom: 16px;
+	}
+}
+
+.sub-menu > li:hover {
+	text-decoration: underline;
+	color: #4b5563;
+}
+
+#primary-menu > li:not(:last-child) {
+	margin-bottom: 12px;
+}
+
+#primary-menu a:hover {
+	text-decoration: underline;
+}
+
+.service *[id],
+.home *[id],
+.knowledge *[id],
+.tech *[id] {
+	scroll-margin-top: 7rem;
+}
+
+.prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"] *))) {
+	color: #1a56db !important;
+}
+
+.testimonials figure:nth-child(1),
+.testimonials figure:nth-child(2),
+.testimonials figure:nth-child(3) {
+	border-bottom-width: 1px;
+}
+
+@media (min-width: 1024px) {
+	.testimonials figure:nth-child(1) {
+		border-right-width: 1px;
+	}
+	.testimonials figure:nth-child(3) {
+		border-bottom-width: 0px;
+		border-right-width: 1px;
+	}
+}
